@@ -4,7 +4,7 @@
 
 - Ensure `podman` is installed
 - Access to `quay.io` to pull the COSA container image
-- Ref DOC https://coreos.github.io/coreos-assembler/building-fcos/ for more details.
+- Ref this Doc https://coreos.github.io/coreos-assembler/building-fcos/ for more details.
 ---
 
 ## Setup COSA Environment
@@ -89,7 +89,13 @@ cosa kola run \
 Upgrade Tests
 
 ```bash
-cosa kola run-upgrade \  --rerun \  --allow-rerun-success=tags=needs-internet \  --build=latest \  --on-warn-failure-exit-77 \  --arch=ppc64le \  --upgrades
+cosa kola run-upgrade \
+    --rerun \
+    --allow-rerun-success=tags=needs-internet \
+    --build=latest \
+    --on-warn-failure-exit-77 \
+    --arch=ppc64le \
+    --upgrades
 ```
 
 ### Notes
@@ -110,7 +116,9 @@ cosa kola run -p qemu \
 ```
 Example:
 ```bash
-cosa kola run -p qemu \  --qemu-image fedora-coreos-45.20260421.91.1-qemu.ppc64le.qcow2 \  'ext.config.rpm-ostree.kernel-replace'
+cosa kola run -p qemu \
+    --qemu-image fedora-coreos-45.20260421.91.1-qemu.ppc64le.qcow2 \
+    'ext.config.rpm-ostree.kernel-replace'
 ```
 
 Notes
